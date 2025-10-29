@@ -13,7 +13,7 @@
     margin-bottom: 24px;
     margin: 24px;
     text-align: center;
-    border: 1px solid #E5E7EB;
+    border: 0px solid #E5E7EB;
     border-radius: 8px;
 }
 
@@ -23,6 +23,15 @@
     /* Light gray color */
     opacity: 1;
     /* Ensures full opacity across browsers */
+}
+
+.text-input:focus {
+    outline: none;
+    border: none;
+}
+
+.text-input:focus::placeholder {
+    opacity: 0;
 }
 
 .button {

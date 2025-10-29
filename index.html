@@ -1,61 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      href="resources/favicon.ico"
-      type="image/x-icon"
-      sizes="96x96"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Join Our Newsletter | devChallenges.io</title>
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Simple page to join a newsletter." />
 
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <!-- Canonical URL to prevent redirect issues -->
+  <link rel="canonical" href="https://maxb13.github.io/DevChallenges-Newsletter" />
 
-      body {
-        height: 100vh;
-      }
+  <!-- Security and performance headers -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-      .author-info {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 16px;
-        color: rgb(55, 65, 81);
-      }
+  <!-- Cache optimization headers -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
+  <meta name="format-detection" content="telephone=no" />
 
-      .author-info a {
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 
-    Join our newsletter
- 
-    Keep up with our latest collections, exclusive deals, and special offers! We introduce a new collection every week, so stay tuned to snag the hottest items just for you.
- 
-    Enter your email address
- 
-    Subscribe now
- 
-    Your email is 100% confidential and won’t send you any spam.
+  <link rel="dns-prefetch" href="https://maxb13.github.io">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    -->
+  <!-- Cache-friendly resource loading -->
+  <link rel="preload" href="./styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./styles.css">
+  </noscript>
 
-    <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
-        >devChallenges.io</a
-      >.
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload Google Fonts (non-blocking) - Using exact HTTPS URLs to avoid redirects -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..800&amp;display=swap" rel="stylesheet">
+  </noscript>
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+
+  <title>Join Our Newsletter | devChallenges.io</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-display: optional;
+    line-height: 1.5em;
+    font-weight: 600;
+    background: #F9FAFB;
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    height: 100vh;
+    width: 552px;
+    justify-items: center;
+    justify-self: center;
+  }
+</style>
+
+<body>
+  <main class="container">
+    <div class="logo" style="padding-top: 80px; padding-bottom: 16px;">
+      <img src="resources/logo.svg" alt="Sign Up Illustration" class="illustration">
     </div>
-  </body>
+    <h1 class="heading" style="padding-bottom: 16px;">Join our newsletter</h1>
+    <p class="subheading gray-text" style="padding-bottom: 60px; text-align: center; width: 130%; font-weight: 500;">
+      Keep up with our latest
+      collections,
+      exclusive deals, and
+      special offers! We introduce a new
+      collection every week, so
+      stay tuned to snag the hottest items just for you.</p>
+    <div class="input-container">
+      <input type="text" class="text-input placeholder" placeholder="Enter your email address">
+      <button class="button-text button">Subscribe now</button>
+      <p class="helper-text gray-text" style="margin-bottom: 24px; text-align: center;">Your email is 100% confidential
+        and won’t send you
+        any spam.</p>
+    </div>
+  </main>
+</body>
+
+<!-- Script to handle font loading and prevent layout shift -->
+<script>
+  // Check if Inter font is loaded and apply class
+  document.fonts.ready.then(function () {
+    document.documentElement.classList.add('font-loaded');
+  });
+
+  // Fallback for older browsers
+  if (!document.fonts) {
+    setTimeout(function () {
+      document.documentElement.classList.add('font-loaded');
+    }, 3000);
+  }
+</script>
+
 </html>
